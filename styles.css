@@ -1,0 +1,251 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #070707;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+.logo {
+    width: 60px;  
+    height: auto;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #070707;
+    flex: 1;
+    text-align: center;
+}
+
+#chat-box img {
+    max-width: 20px;
+    max-height: 20px;
+    width: auto;
+    height: auto;
+}
+
+#chat-box {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#message-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+    padding-left: 10px;
+    outline: none;
+}
+
+#image-preview {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#send-button, #send-image-button, #audio-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#send-button img, #send-image-button img, #audio-button img {
+    max-width: 20px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.icon {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.emoticon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.emoticon {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.chat-message {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.message-header {
+    display: block;
+    font-size: 0.9em;
+    color: #555; /* Adjusted for better contrast */
+    margin-bottom: 5px;
+}
+
+.delete-button, .download-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    padding: 5px;
+}
+
+.delete-button {
+    right: 40px;
+}
+
+.download-button {
+    right: 5px;
+}
+
+.delete-button img, .download-button img {
+    width: 20px;
+    height: auto;
+}
+
+#install-button {
+    display: none;  
+    position: relative;
+    padding: 10px 20px;
+    background-color: #0056b3; /* Couleur de fond bleu foncé */
+    color: white; /* Couleur du texte blanc */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    align-self: center;
+}
+
+hr {
+   width: 100%; 
+}
+
+.icon1 {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+}
+ 
+.icon2 {
+    width: 48px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+footer {
+   width: 100%;
+}
+
+.footerdiv {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left {
+    justify-content: flex-start;
+}
+
+.footer-center {
+    justify-content: center;
+}
+
+.footer-right {
+    justify-content: flex-end;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .logo {
+        width: 40px; 
+        height: auto;
+    }
+
+    #chat-box {
+        height: 300px; 
+    }
+
+    h1 {
+        font-size: 1.2em;  
+    }
+}

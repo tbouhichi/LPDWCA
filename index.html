@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Étudiant</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo-.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo-.png" type="image/x-icon">
+    <meta name="theme-color" content="#08AEF5">
+    <meta name="description" content="Chat Étudiant en temps réel pour la communication instantanée.">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="icon-button" id="back-button">
+                <img src="go-back.png" alt="Retour" class="icon1">
+            </button>
+            <h1>Alex</h1>
+            <button class="icon-button" id="call-button">
+                <img src="phone-1.png" alt="Téléphone" class="icon1">
+            </button>
+        </header>
+        <hr />
+
+        <div id="chat-box"></div>
+        <div class="emoticon-container">
+            <span class="emoticon">😀</span>
+            <span class="emoticon">😂</span>
+            <span class="emoticon">😍</span>
+            <span class="emoticon">😢</span>
+            <span class="emoticon">👍</span>
+        </div>
+        <div class="input-container">
+            <button id="send-image-button"><img src="joint.png" alt="Ajouter une image" class="icon" width="20" height="20"></button>
+            <input type="text" id="message-input" placeholder="Tapez votre message...">
+            <input type="file" id="image-input" accept="image/*" style="display:none;">
+            <div id="image-preview" style="display:none;"></div>
+            <button id="audio-button"><img src="voix.png" alt="Audio" class="icon1" width="20" height="20"></button>
+            <button id="send-button" style="margin-left: 10px;"><img src="send.png" alt="Envoyer" class="icon" width="20" height="20"></button>
+         
+        </div>
+      
+        <button id="install-button">Installer l'application</button>  
+        <hr />
+        <footer>
+      
+            <div class="footerdiv">
+                <div class="footer-left">
+                    <button class="icon-button" id="home-button">
+                        <img src="home.png" alt="Home" class="icon1">
+                    </button>
+                    <button class="icon-button" id="search-button">
+                        <img src="search.png" alt="Search" class="icon1">
+                    </button>
+                </div>
+
+                <div class="footer-center">
+                    <button class="icon-button" id="add-button">
+                        <img src="add.png" alt="Add" class="icon2">
+                    </button>
+                </div>
+                <div class="footer-right">
+                    <button class="icon-button" id="message-button">
+                        <img src="message-icon.png" alt="Messages" class="icon1">
+                    </button>
+                    <button class="icon-button" id="account-button">
+                        <img src="account-icon.png" alt="Account" class="icon1">
+                    </button>
+                </div>
+            </div>
+        </footer>
+       
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/chat/service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(function(error) {
+                    console.log('Service Worker registration failed:', error);
+                });
+
+            navigator.serviceWorker.addEventListener('message', function(event) {
+                if (event.data.action === 'focusMessage') {
+                    highlightMessage(event.data.messageId);
+                }
+            });
+        }
+
+        function highlightMessage(messageId) {
+            const messageElement = document.querySelector(`[data-message-id="${messageId}"]`);
+            if (messageElement) {
+                messageElement.style.backgroundColor = '#ff0';  
+                messageElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        let deferredPrompt;
+        const installButton = document.getElementById('install-button');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installButton.style.display = 'block';
+
+            installButton.addEventListener('click', () => {
+                installButton.style.display = 'none';
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+        });
+
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+        });
+    </script>
+
+
+</body>
+</html>
