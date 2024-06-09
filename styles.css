@@ -26,8 +26,13 @@ header {
     align-items: center;
     padding-bottom: 10px;
     width: 100%;
+<<<<<<< HEAD
     background-color: #FFFFFF;
     color: #070707;
+=======
+    background-color: #E7FDFF;
+    color: #000080;
+>>>>>>> dc4534ec0a722bb2ec5be8f3ea882e18f59e5d1a
     padding: 15px;
     border-radius: 10px 10px 0 0;
 }
@@ -40,6 +45,7 @@ header {
 h1 {
     font-size: 1.5em;
     margin: 0;
+<<<<<<< HEAD
     color: #070707;
     flex: 1;
     text-align: center;
@@ -48,6 +54,14 @@ h1 {
 #chat-box img {
     max-width: 20px;
     max-height: 20px;
+=======
+    color: #000080;
+}
+
+#chat-box img {
+    max-width: 150px;
+    max-height: 150px;
+>>>>>>> dc4534ec0a722bb2ec5be8f3ea882e18f59e5d1a
     width: auto;
     height: auto;
 }
@@ -91,14 +105,22 @@ h1 {
     transform: translateY(-50%);
 }
 
+<<<<<<< HEAD
 #send-button, #send-image-button, #audio-button {
+=======
+#send-button, #send-image-button {
+>>>>>>> dc4534ec0a722bb2ec5be8f3ea882e18f59e5d1a
     background-color: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
 }
 
+<<<<<<< HEAD
 #send-button img, #send-image-button img, #audio-button img {
+=======
+#send-button img, #send-image-button img {
+>>>>>>> dc4534ec0a722bb2ec5be8f3ea882e18f59e5d1a
     max-width: 20px;
     height: auto;
     vertical-align: middle;
@@ -125,6 +147,7 @@ h1 {
 .chat-message {
     position: relative;
     padding: 10px;
+<<<<<<< HEAD
     border: 1px solid #bbb;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -137,6 +160,12 @@ h1 {
     font-size: 0.9em;
     color: #555; /* Adjusted for better contrast */
     margin-bottom: 5px;
+=======
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+>>>>>>> dc4534ec0a722bb2ec5be8f3ea882e18f59e5d1a
 }
 
 .delete-button, .download-button {
@@ -161,6 +190,16 @@ h1 {
     height: auto;
 }
 
+<<<<<<< HEAD
+=======
+ 
+.delete-button img, .download-button img {
+    width: 20px !important;
+    height: auto !important;
+    vertical-align: middle;
+}
+
+>>>>>>> dc4534ec0a722bb2ec5be8f3ea882e18f59e5d1a
 #install-button {
     display: none;  
     position: relative;
@@ -175,6 +214,7 @@ h1 {
     align-self: center;
 }
 
+<<<<<<< HEAD
 hr {
    width: 100%; 
 }
@@ -234,6 +274,8 @@ footer {
     justify-content: flex-end;
 }
 
+=======
+>>>>>>> dc4534ec0a722bb2ec5be8f3ea882e18f59e5d1a
 /* Responsive Styles */
 @media (max-width: 600px) {
     .logo {

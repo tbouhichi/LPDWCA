@@ -10,6 +10,7 @@ const urlsToCache = [
     '/chat/logo.jpg',
     '/chat/logo.webp',
     '/chat/log.ico',
+<<<<<<< HEAD
     '/chat/logo-.png',
     '/chat/joint.png',
     '/chat/send.png',
@@ -21,6 +22,10 @@ const urlsToCache = [
     '/chat/add.png',
     '/chat/go-back.png',
     '/chat/phone-1.png',
+=======
+    '/chat/clip-icon.png',
+    '/chat/send-icon.png',
+>>>>>>> dc4534ec0a722bb2ec5be8f3ea882e18f59e5d1a
     '/chat/clip-icon1.webp',
     '/chat/send-icon1.webp',
     '/chat/app.png',
